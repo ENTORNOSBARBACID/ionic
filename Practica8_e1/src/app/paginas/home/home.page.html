@@ -1,0 +1,15 @@
+<app-header></app-header>
+<ion-content>
+    <h1>Libros más vendidos en este 2024!</h1>
+
+    <div *ngFor="let i of libros">
+    <a routerLink="/page1/{{i.titulo}}">
+      <ion-item>
+        <img src="{{i.portada}}" />
+        <p>{{ i.titulo }}</p>
+      </ion-item>
+    </a>
+    </div>
+  </ion-content>
+
+<app-footer></app-footer>
