@@ -1,0 +1,28 @@
+<div class="clase"> 
+  <label>Introduce un numero</label><br>
+  <input type="text" [(ngModel)]="numero" placeholder="Numero del 1 al 10">
+  <ion-buttons *ngIf="mostrar==false">
+    <ion-button (click)="adivinar()">Click aqui</ion-button>
+  </ion-buttons>
+  <ion-buttons *ngIf="mostrar">
+    <ion-button (click)="resetear()">Resetear</ion-button>
+  </ion-buttons>
+  {{mensaje}}<br>
+  <p>Tienes {{contador}} intentos chupacabras</p>
+
+  <div *ngIf="mostrar">
+  <ion-card>
+    <ion-card-title>Enhorabuena!!!!</ion-card-title>
+    <hr>
+    <ion-card-subtitle>Has acertado the secret numbrer!</ion-card-subtitle>
+  </ion-card>
+  </div>
+
+  <div *ngIf="contador >= 10">
+    <ion-card>
+      <ion-card-title>PRINGAOOOOOOOOOOOOOOO!!!!</ion-card-title>
+      <hr>
+      <ion-card-subtitle>Has PUTO PERDIDO SUBNORMAAAAAAL!</ion-card-subtitle>
+    </ion-card>
+  </div>
+</div>
