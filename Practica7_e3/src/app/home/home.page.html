@@ -1,0 +1,12 @@
+<div *ngFor="let i of lenguajes" class="father">
+  <ion-item>
+    <ion-label>{{i.nombre}}</ion-label>
+    <ion-checkbox [(ngModel)]="i.seleccionado" (ngModelChange)="mostrar()"></ion-checkbox>
+</ion-item>
+</div>
+<div *ngFor="let i of selected">
+<ion-card>
+  <ion-card-title>{{i.nombre}}</ion-card-title>
+  <ion-card-subtitle>{{i.descripcion}}</ion-card-subtitle>
+</ion-card>
+</div>

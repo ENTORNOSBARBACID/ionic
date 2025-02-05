@@ -1,0 +1,65 @@
+.father {
+  padding: 10px;
+}
+
+ion-item {
+  --background: #f4f4f4;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+ion-item:hover {
+  transform: scale(1.02);
+}
+
+ion-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+ion-checkbox {
+  --border-radius: 50%;
+  --size: 22px;
+  --background: white;
+  --border-color: #4CAF50;
+  --checkmark-color: #4CAF50;
+}
+
+/* Animación cuando se marca el checkbox */
+ion-checkbox:checked {
+  animation: pop 0.3s ease-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Estilo para las tarjetas */
+ion-card {
+  margin: 10px;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+ion-card:hover {
+  transform: translateY(-5px);
+}
+
+ion-card-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+ion-card-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-top: 5px;
+}
