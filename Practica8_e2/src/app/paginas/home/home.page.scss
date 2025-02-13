@@ -1,40 +1,24 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+.son {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  background-color: whitesmoke;
+  box-shadow: 3px 3px 5px;
 }
 img {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
 }
 .boton {
   position: fixed !important;
   bottom: 70px;
   right: 60px;
-  z-index: 1100; /* Asegura que esté por encima de otros elementos */
+  z-index: 1100;
 }
 .boton ion-fab {
-  position: static !important; /* Evita que Ionic modifique la posición */
+  position: static !important;
+}
+.buscador {
+  display: flex;
+  justify-content: space-between;
 }
