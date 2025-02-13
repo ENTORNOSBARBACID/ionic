@@ -5,7 +5,6 @@
         <ion-icon name="search"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-text >Send to...</ion-text>
     <ion-buttons slot="end">
       <ion-button>
         <ion-icon name="person"></ion-icon>
@@ -13,21 +12,3 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<p>Valor actual de segmentoSeleccionado: {{ segmentoSeleccionado }}</p>
-<ion-content class="ion-padding">
-    <ion-segment [(ngModel)]="segmentoSeleccionado">
-      <ion-segment-button value="info">
-        <ion-label>Contacto</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="config">
-        <ion-label>Buscar</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-
-  <div *ngIf="segmentoSeleccionado=='info'">
-      <p>Esta es la sección de Información </p>
-    </div>
-    <div *ngIf="segmentoSeleccionado=='config'">
-      <p>Esta es la sección de Configuración </p>
-    </div>
-</ion-content>

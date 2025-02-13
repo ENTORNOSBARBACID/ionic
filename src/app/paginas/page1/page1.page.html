@@ -1,3 +1,15 @@
 <app-header></app-header>
-
+<ion-content>
+  <div class="father" *ngFor="let i of libros">
+    <div class="son" *ngIf="i.titulo==id">
+      <p>{{i.titulo}}</p>
+      <p>{{i.autor}}</p>
+      <p>{{i.genero}}</p>
+      <p>{{i.editorial}}</p>
+      <p>{{i.ano_publicacion}}</p>
+      <img src="{{i.portada}}" />
+      <p>{{i.sinopsis}}</p>
+    </div>
+  </div>
+</ion-content>
 <app-footer></app-footer>

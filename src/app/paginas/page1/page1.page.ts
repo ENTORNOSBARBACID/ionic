@@ -1,33 +1,32 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import {
-  IonContent,
-  IonHeader,
-  IonTitle,
-  IonToolbar,
-} from '@ionic/angular/standalone';
-import { ComponentesModule } from 'src/app/componentes/componentes.module';
-import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Ilibro } from 'src/app/interfaz/ilibro';
+import { ContenidoService } from 'src/app/services/contenido.service';
 
 @Component({
   selector: 'app-page1',
   templateUrl: './page1.page.html',
   styleUrls: ['./page1.page.scss'],
-  standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    ComponentesModule,
-    IonicModule,
-    RouterModule
-  ],
+  standalone: false,
 })
 export class Page1Page implements OnInit {
-  constructor() {}
-
+  id: any;
+  libros: Ilibro[] = [];
+  ano_publicacion = 0;
+  constructor(
+    private route: ActivatedRoute,
+    private servicio: ContenidoService
+  ) {}
   ngOnInit() {
-    console.log('Page1 ha sido cargada');
+    this.servicio.getLibros().subscribe((datos) => {
+      datos.forEach((a) => this.libros.push(a));
+    });
+    console.log(this.libros);
+
+    this.route.paramMap.subscribe((params) => {
+      this.id = params.get('id'); // 'id' es el nombre del parámetro en la ruta
+      console.log('Parámetro recibido:', this.id);
+    });
   }
 }

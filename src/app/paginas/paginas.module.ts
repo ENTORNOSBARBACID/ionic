@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Page1Page } from './page1/page1.page';
-import { Page2Page } from './page2/page2.page';
-import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
+import { HomePage } from './home/home.page';
 import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { ComponentesModule } from '../componentes/componentes.module';
+
+
 
 @NgModule({
-  declarations: [Page1Page, Page2Page],
-  imports: [CommonModule, IonicModule, RouterModule, FormsModule],
-  exports: [Page1Page, Page2Page],
+  declarations: [Page1Page, HomePage],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    ComponentesModule
+  ],
+  exports:[Page1Page, HomePage]
 })
-export class PaginasModule {}
+export class PaginasModule { }
