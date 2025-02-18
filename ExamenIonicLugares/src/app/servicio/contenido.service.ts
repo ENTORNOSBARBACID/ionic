@@ -9,6 +9,6 @@ import { RootObject } from 'src/app/interface/ilugar';
 export class ContenidoService {
   constructor(private http: HttpClient) {}
   getlugar(): Observable<RootObject> {
-    return this.http.get<RootObject>('../../assets/data/temperaturas.json');
+    return this.http.get<RootObject>('/assets/data/temperaturas.json');
   }
 }

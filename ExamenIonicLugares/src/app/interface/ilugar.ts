@@ -17,4 +17,5 @@ export interface Source {
   id: null;
   name: string;
   description: string;
+  seleccionado?: boolean
 }

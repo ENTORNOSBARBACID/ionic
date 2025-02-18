@@ -1,3 +1,37 @@
-toaijotiejaoitj
+<app-header></app-header>
 
-<ion-list *ngFor="let item of sitio"> {{item.name}} </ion-list>
+<ion-list *ngFor="let item of sitio">
+    
+    <ion-item>
+        <ion-icon name="earth-outline"></ion-icon>
+            <ion-label >{{item.name}}</ion-label>
+        <ion-buttons slot="end">
+            <ion-button (click)="cambiar(item.name)">
+            <!-- <ion-button (click)="descripcion(item.name)"> -->
+                <ion-icon name="eye-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-item>
+    <div *ngIf="item.seleccionado==true">
+    <ion-card>
+        <ion-card-title>Detalles {{item.name}}</ion-card-title>
+        
+        <ion-card-subtitle>{{item.description}}</ion-card-subtitle>
+        <ion-buttons>
+            <ion-button (click)="cerrar(item.name)">
+                <ion-icon name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-card>
+    </div>
+
+</ion-list>
+
+
+    <a routerLink="/temperaturas">
+    <ion-buttons>
+        <ion-fab-button>
+            <ion-icon name="arrow-up"></ion-icon>
+        </ion-fab-button>
+    </ion-buttons>
+    </a>

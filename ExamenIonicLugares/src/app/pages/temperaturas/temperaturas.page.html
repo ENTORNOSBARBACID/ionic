@@ -1,0 +1,18 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngFor="let item of autonomia">
+    <ion-card>
+      <ion-card-title>{{item.source.name}}</ion-card-title>
+      <ion-card-subtitle>
+      <ion-list *ngFor="let k of item.provincias">
+        <ion-item>
+          <p>{{k.name}}</p>
+          <p slot="end">{{k.temp}}</p>
+          
+        </ion-item>
+      </ion-list>
+  </ion-card-subtitle>
+    </ion-card>
+  </ion-list>
+</ion-content>
