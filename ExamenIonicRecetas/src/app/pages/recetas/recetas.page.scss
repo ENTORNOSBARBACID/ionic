@@ -1,0 +1,12 @@
+.imagenes{
+    width:200px;
+    height: 200px;
+  }
+  .justified-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center;     /* Centra horizontalmente */
+    height: 100%;            /* Asegura que el card ocupe toda la altura disponible */
+  }
+  

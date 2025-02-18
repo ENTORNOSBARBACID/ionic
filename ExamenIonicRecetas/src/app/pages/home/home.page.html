@@ -1,0 +1,19 @@
+<app-header></app-header>
+<ion-content>
+  <ion-grid class="ion-justify-content-center ion-align-items-cente r ">
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of tipo">
+        <a routerLink="/comida/{{item.idCategory}}">
+        <ion-card class="justified-card">
+          <ion-card-header>
+            <img src="/assets/images/imgCategorias/{{item.strCategoryThumb}}" class="imagenes">
+          </ion-card-header>
+          <ion-card-content>
+            {{ item.strCategory }}
+          </ion-card-content>
+        </ion-card>
+      </a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

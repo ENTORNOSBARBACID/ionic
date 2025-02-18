@@ -1,0 +1,17 @@
+<app-header></app-header>
+<ion-content>
+  <div *ngFor="let item of tipo">
+    <div *ngIf="item.idCategory==id">
+      <ion-card class="justified-card">
+        <img src="/assets/images/imgCategorias/{{item.strCategoryThumb}}" class="imagenes">
+        <ion-card-title>{{item.strCategory}}</ion-card-title>
+        <ion-card-subtitle>{{item.strCategoryDescription}}</ion-card-subtitle>
+        <a routerLink="/recetas/{{item.strCategory}}">
+        <ion-button>
+          Ver recetas
+        </ion-button>
+      </a>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
