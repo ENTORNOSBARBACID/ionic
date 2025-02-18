@@ -1,0 +1,37 @@
+<app-header></app-header>
+<ion-content>
+  <ion-searchbar
+    [(ngModel)]="buscar"
+    placeholder="Buscar libros..."
+    (ionInput)="onSearch()"
+  >
+  </ion-searchbar>
+  <h1 id="top">Libros más vendidos en este 2024!</h1>
+  <ion-buttons>
+    <ion-button (click)="mostrar()">
+      <ion-icon name="arrow-down"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  {{filtrado}}
+  <h2>Ordenado por: {{seleccionado}}</h2>
+  <br />
+  <div class="father" *ngFor="let i of librosFiltrados">
+    <a class="son" routerLink="/page1/{{i.titulo}}">
+      <ion-item>
+        <img src="{{i.portada}}" />
+        <p>{{ i.titulo }}</p>
+        <p>-</p>
+        <p>{{ i.autor }}</p>
+      </ion-item>
+    </a>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" b>
+    <a href="#">
+      <ion-fab-button>
+        <ion-icon name="arrow-up"></ion-icon>
+      </ion-fab-button>
+    </a>
+  </ion-fab>
+</ion-content>
+
+<app-footer></app-footer>
