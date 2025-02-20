@@ -1,0 +1,19 @@
+<app-header [title]="pageTitle"></app-header>
+
+<ion-header >
+  <ion-toolbar>
+    <ion-icon  [routerLink]="['/home']" slot="start" name="chevron-back-outline"></ion-icon>
+    <ion-title>Temperaturas de Provincias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let provincia of lprovincias">
+      <ion-label>
+        <h2>{{ provincia.name }}</h2>
+        <p>Temperatura: {{ provincia.temp }} °C</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

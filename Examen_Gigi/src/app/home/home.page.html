@@ -1,0 +1,29 @@
+<!-- src/app/home/home.page.html -->
+<app-header [title]="pageTitle"></app-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let autonomia of lautonomias">
+      <ion-icon slot="start" name="earth-outline"></ion-icon>
+      <ion-label>{{ autonomia.name }}</ion-label>
+<ion-button (click)="showdetalles(autonomia)" expand="block" fill="clear" shape="round">
+<ion-icon slot="end" name="eye-outline"></ion-icon></ion-button>
+
+<ion-card>
+  <div *ngIf="autonomia.visible">
+    <h2>DETALLES {{ autonomia.name }}</h2>
+    <p>{{ autonomia.description }}</p>
+    <ion-button (click)="closedetalles(autonomia)">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-button>
+    <ion-fab-button>
+      <ion-icon [routerLink]="['/temperaturas',autonomia.name]" name="add"></ion-icon>
+    </ion-fab-button>      
+  </div>
+
+</ion-card>
+
+</ion-item>
+  </ion-list>
+</ion-content>
