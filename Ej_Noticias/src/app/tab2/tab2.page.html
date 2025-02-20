@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>
+      Categorías
+    </ion-title>
+  </ion-toolbar>
+  <ion-segment scrollable mode="md" [(ngModel)]="categoria" (ionChange)="changeCategory()">
+    <ion-segment-button mode="md" *ngFor="let categoria of categories" [value]="categoria">
+      <ion-label class="ion-text-capitalize">{{ categoria }}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" *ngFor="let n of lNoticias">
+        <ion-card>
+           <ion-card-header>
+            <ion-card-subtitle>{{n.author}}</ion-card-subtitle>
+            <ion-card-title>{{n.title}}</ion-card-title>
+           </ion-card-header>
+           <ion-img  *ngIf="n.urlToImage" [src]="n.urlToImage"></ion-img>
+
+           <ion-card-content>
+            <p>{{n.description}}</p>
+           </ion-card-content>
+        </ion-card>
+    </ion-col>
+      
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
