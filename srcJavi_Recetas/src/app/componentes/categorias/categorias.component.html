@@ -1,0 +1,22 @@
+<ion-content>
+  <!-- Crear una cuadrícula -->
+  <ion-grid>
+    <!-- Filas de tarjetas -->
+    <ion-row>
+      <!-- Recorre cada categoría y coloca cada tarjeta en una columna -->
+      <ion-col size="6" *ngFor="let categoria of categorias">
+        <ion-card (click)="verDetalles(categoria.idCategory)">
+          <ion-card-header>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Muestra la imagen de la categoría -->
+            <ion-thumbnail slot="start">
+              <img [src]="'assets/imgCategorias/' + categoria.strCategoryThumb" alt="{{ categoria.strCategory }}">
+            </ion-thumbnail>
+            <ion-card-title>{{ categoria.strCategory }}</ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,19 @@
+<app-cabecera></app-cabecera>
+
+<ion-content>
+  <ion-card *ngIf="categoria">
+    <ion-card-header>
+      <ion-card-title>{{ categoria.strCategory }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-thumbnail slot="start">
+        <img [src]="'assets/imgCategorias/' + categoria.strCategoryThumb" alt="{{ categoria.strCategory }}">
+      </ion-thumbnail>
+      <p>{{ categoria.strCategoryDescription }}</p>
+    </ion-card-content>
+    <ion-button (click)="verRecetas(categoria.strCategory)" expand="full">
+      Ver Recetas
+    </ion-button>
+  </ion-card>
+</ion-content>
+
