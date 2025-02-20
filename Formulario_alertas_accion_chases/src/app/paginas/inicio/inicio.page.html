@@ -1,0 +1,45 @@
+<app-cabecera [titulo]="titulo"></app-cabecera>
+
+<ion-content [fullscreen]="true">
+
+ <!-- <ion-list *ngFor="let item of lista">
+    <ion-item [routerLink]="item.ruta" detail="true">
+        <ion-icon slot="start" [name]="item.icono" color="danger"></ion-icon>
+        <ion-label>{{item.texto}}</ion-label>
+    </ion-item>
+ </ion-list> -->
+<form [formGroup]="usuario" (ngSubmit)="Registrar()">
+<ion-list>
+    <ion-list-header>
+        <ion-label>
+            Registro
+        </ion-label>
+    </ion-list-header>
+    <ion-item>
+        <ion-label>
+            Nombre
+        </ion-label>
+        <ion-input type="text" placeholder="@usuario" formControlName="nombre"></ion-input>
+    </ion-item>
+    <ion-label color="danger"*ngIf="usuario.controls.nombre.errors?.['required']">
+Vaya perro 
+    </ion-label>
+    <ion-item>
+        <ion-label>
+            contraseña
+        </ion-label>
+        <ion-input type="text" placeholder="@contraseña" formControlName="contra"></ion-input>
+    </ion-item>
+    <ion-label color="danger"*ngIf="usuario.controls.contra.errors?.['maxlength'] || usuario.controls.contra.errors?.['minlength']">
+    viva Yolanda diaz</ion-label>
+    <p>
+        <ion-button type="submit">Viva perro Sanxe</ion-button>
+    </p>
+</ion-list>
+
+
+</form>
+
+</ion-content>
+
+<app-pie></app-pie>
